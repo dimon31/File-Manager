@@ -3,7 +3,6 @@ plugins {
     id 'java'
     id 'eclipse'
     id 'io.quarkus'
-    // id 'org.siouan.frontend-jdk11'
 }
 
 
@@ -23,7 +22,7 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured'
 }
 
-group 'de.hse.swa'
+group 'main'
 version '0.1.0'
 
 compileJava {
