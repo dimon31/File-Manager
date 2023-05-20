@@ -3,6 +3,7 @@ plugins {
     id 'java'
     id 'eclipse'
     id 'io.quarkus'
+   // id 'idea'
 }
 
 
@@ -17,6 +18,8 @@ dependencies {
     implementation 'io.quarkus:quarkus-hibernate-orm'
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-resteasy'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'org.jetbrains:annotations:24.0.0'
 
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
@@ -35,10 +38,12 @@ compileTestJava {
 }
 
 java {
-
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 test {
+    //systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
 
 }
 
